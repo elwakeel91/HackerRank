@@ -4,26 +4,26 @@ using System.IO;
 using System.Linq;
 class Solution
 {
-
-    // Finds the number of possible values
+    // Finds the total number of possible values
     static int getTotalX(int[] a, int[] b)
     {
         // Get the LCM and GCD of the respective arrays
         int lcm = LCM(a);
         int gcd = GCD(b);
 
-        // Variable holding our count
+        // Variable holding our counter
         int count = 0;
 
         // Loop through multiples of the LCM
         for (int i = 1; (lcm * i) <= gcd; i++)
         {
-            // Check if the lcm * i is a multiple of the GCD
+            // Check if the (lcm * i) is a multiple of the GCD
             if (gcd % (lcm * i) == 0)
                 // Add one to our counter
                 count++;
         }
-
+        
+        // Return the total number between the two sets
         return count;
     }
 

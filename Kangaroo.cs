@@ -1,4 +1,7 @@
-﻿using System;
+// URL of the problem
+// https://www.hackerrank.com/challenges/kangaroo/problem
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

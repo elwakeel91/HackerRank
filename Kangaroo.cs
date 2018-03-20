@@ -18,8 +18,10 @@ class Solution
 
         // Check that the number of jumps is positive and we don't have a remainder
         if (numberOfJumps >= 0 && (numberOfJumps % 1) == 0)
+            // Return 'YES'
             return "YES";
         else
+            // Otherwise the number of jumps is negative or we have a remainder and return 'NO'
             return "NO";
     }
 

@@ -1,2 +1,2 @@
 # HackerRank
-HackerRank Solutions
+A project for my HackerRank Solutions

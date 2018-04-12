@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace HackerRank_CSharp
 {
-    sealed class Solution
+    sealed class Solution : PrimeNumbers
     {
         /// <summary>
         /// Returns the maximum number of integers you can select
@@ -17,34 +17,25 @@ namespace HackerRank_CSharp
         /// <returns></returns>
         static int PickingNumbers(int[] a, int n)
         {
-            // Create a new array of length double array 'a'
-            // to store the number of integers we can select at each digit found in array a
-            int[] b = new int[2 * n];
-            // Variable to hold the index of array b
-            int indexB;
+            // Create a new array to store the frequency of the number in array a
+            int[] frequency = new int[100];
 
-            // Loop through the array of numbers up to (n - 1) as the substring is at least 2 numbers
-            for (int i = 0; i < (n - 1); i++)
+            // Loop through the array of numbers
+            for (int i = 0; i < n; i++)
+                // Set the value of our frequence array
+                frequency[a[i]]++;
+
+            int maxNumber = 0;
+
+            // Loop through the frequency array and find which pair of numbers occurs the most
+            for (int i = 1; i < 100; i++)
             {
-                // Set the value for the index of array b
-                indexB = 2 * i;
-
-                // Create a second loop to compare the numbers in the array
-                for (int j = i; j < n; j++)
-                {
-                    // Check if the two numbers being compared are equal or is bigger by 1
-                    if (a[i] == a[j] || a[i] + 1 == a[j])
-                        // Increase the number stored in array b
-                        b[indexB]++;
-                    // Check if the two numbers being compared are equal or is smaller by 1
-                    if (a[i] == a[j] || a[i] - 1 == a[j])
-                        // Increase the number stored in array b
-                        b[indexB + 1]++;
-                }
+                int temp = (frequency[i - 1] + frequency[i]);
+                maxNumber = temp > maxNumber ? temp : maxNumber;
             }
 
             // Return the maximum number found in array b
-            return b.Max();  
+            return maxNumber;
         }
 
         static void Main(String[] args)

@@ -19,17 +19,13 @@ namespace HackerRank_CSharp
         {
             // Variable holding the number of deletions required
             int numDeletions = 0;
-            // Variable to check what the next character must be
-            char nextCharacter = s[0] == 'A' ? 'B' : 'A';
 
             // Loop through the string
             for (int i = 1; i < s.Length; i++)
             {
-                // Check if we got the required next character
-                if (s[i] == nextCharacter)
-                    // Switch the next character variable
-                    nextCharacter = (nextCharacter == 'A') ? 'B' : 'A';
-                else // We didn't get the required character and we must delete
+                // Check if the characters did not alternate
+                if (s[i] == s[i - 1])
+                    // Increment the number of deletions required
                     numDeletions++;
             }
 

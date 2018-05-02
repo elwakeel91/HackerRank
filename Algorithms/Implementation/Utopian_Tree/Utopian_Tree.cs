@@ -15,7 +15,7 @@ namespace HackerRank_CSharp
         /// </summary>
         /// <param name="n"> number of cycles </param>
         /// <returns> Heigh of the tree </returns>
-        static int utopianTree(int n)
+        public static int utopianTree(int n)
         {
             // Find out how many years have passed
             int years = n / 2;

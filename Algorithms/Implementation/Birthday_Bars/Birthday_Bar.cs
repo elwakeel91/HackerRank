@@ -8,8 +8,15 @@ using System.Linq;
 class Solution
 {
 
-    // Gives the total number of combinations
-    static int solve(int n, int[] s, int d, int m)
+    /// <summary>
+    /// Calculates how many ways we can give the required number of squares that add up to a sum value.
+    /// </summary>
+    /// <param name="n"> Total number of squares </param>
+    /// <param name="s"> Value of each square </param>
+    /// <param name="d"> The desired sum </param>
+    /// <param name="m"> The required number of squares </param>
+    /// <returns></returns>
+    static int BirthdayBar(int n, int[] s, int d, int m)
     {
         // Variable holding our running sum value
         int sum = 0;
@@ -43,7 +50,7 @@ class Solution
         string[] tokens_d = Console.ReadLine().Split(' ');
         int d = Convert.ToInt32(tokens_d[0]);
         int m = Convert.ToInt32(tokens_d[1]);
-        int result = solve(n, s, d, m);
+        int result = BirthdayBar(n, s, d, m);
         Console.WriteLine(result);
     }
 }
